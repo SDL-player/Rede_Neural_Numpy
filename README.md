@@ -10,7 +10,7 @@ from functions import Relu, sigmoid # Importa as funções de ativação.
 
 
 model = Model() # Cria um modelo.
-model.add_layer(Layer(3, 5, Relu)) # Cria uma camada com 3 entradas, 5 saídas e com a ativação Relu.
+model.add_layer(Layer(3, 5, Relu)) # Cria uma camada com 3 entradas, 5 saídas e com a ativação Relu e adiciona a mesma ao modelo criado.
 model.add_layer(Layer(5, 5, Relu)) 
 model.add_layer(Layer(5, 5, Relu))
 model.add_layer(Layer(5, 5, Relu))
@@ -25,3 +25,7 @@ model.train_model(input_, target, 0.8, 2000) # Treina o modelo dado com uma taxa
 # Requisitos
 python>=3.7.0
 numpy>=1.12.0
+
+# Inspirações
+
+Tive uma pequena inspiração nas bibliotecas Pytorch e Keras.
