@@ -22,4 +22,6 @@ target = [np.random.randint(0, 10, 2) for _ in range(10)]# Cria entradas aleator
 
 model.train_model(input_, target, 0.8, 2000) # Treina o modelo dado com uma taxa de 0.8 e com 2000 epocas.
 ```
-
+# Requisitos
+python>=3.7.0
+numpy>=1.12.0
