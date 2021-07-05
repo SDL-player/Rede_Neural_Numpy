@@ -1,5 +1,6 @@
+import json
+import layer
 import numpy as np
-from layer import Layer
 
 
 class Model:
@@ -92,4 +93,45 @@ class Model:
                media += error
                
                print(f"Train data: {q} Epoch: {epoch + 1}/epochs Error: {error} Media: {media / q}")
+    
+    def save_model(self, dir_):
+        
+        json_dict = {}
+        
+        for id_, layer in enumerate(self.layers):
+            json_dict[f"Layer_{id_ + 1}"] = {"q_inputs": layer.input,
+                                             "q_outputs": layer.output,
+                                             "weights": layer.weights.tolist(),
+                                             "biases": layer.biases.tolist(),
+                                             "function": f"{layer.name_of_function}"}
+            
+        text = json.dumps(json_dict, indent=4)
+            
+        with open(dir_, "w") as file:
+            file.writelines(text)
+            file.close()
+                
+    def load_model(self, dir_):
+        with open(dir_) as file:
+            text = file.read()
+            dict_json = json.loads(text)
+            file.close()
+            
+        
+        for key in dict_json.keys():
+            
+            weights = dict_json[key]["weights"]
+            biases = dict_json[key]["biases"]
+            inputs = dict_json[key]["q_inputs"]
+            outputs = dict_json[key]["q_outputs"]
+            function = dict_json[key]["function"]
+            
+            layer_ = layer.Layer(inputs, outputs, function)
+            
+            layer_.weights = np.array(weights)
+            
+            layer_.biases = np.array(biases)
+            
+            self.layers.append(layer_)
+
                
