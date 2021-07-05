@@ -37,3 +37,13 @@ def PRelu(x, alpha):
     else:
         return alpha * x
     
+functions_ = {"Relu": Relu,
+             "Elu": Exponential_linear_unit,
+             "Identity": Identity,
+             "Binary": binary,
+             "Prelu": PRelu,
+             "Leaky_Relu": Leaky_Relu,
+             "Sigmoid": sigmoid
+             }
+    
+    
