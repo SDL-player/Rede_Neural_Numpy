@@ -4,8 +4,8 @@ Uma tentativa de fazer uma biblioteca de machine learning
 # Como criar uma rede
 
 ```python
-from Rede_Neural_Numpy.layer import Layer # Importa a classe Layer.
-from Rede_Neural_Numpy.model import Model # Importa a classe Model.
+from Rede_Neural_Numpy import Layer # Importa a classe Layer.
+from Rede_Neural_Numpy import Model # Importa a classe Model.
 import numpy as np # Importa a biblioteca numpy como np
 
 model = Model() # Cria um modelo.
