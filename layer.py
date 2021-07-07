@@ -7,7 +7,6 @@ class Input:
     def __init__(self, input_, output, i=0.1):
         self.input = input_
         self.output = output
-        self.name_of_function = function
         self.weights = random.rand(output, input_) * i
         self.biases = random.rand(output) * i
         
