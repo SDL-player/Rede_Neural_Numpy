@@ -40,3 +40,20 @@ class Layer:
         x = np.dot(self.weights, x) + self.biases
 
         return x
+
+class Output:
+    def __init__(self, input_, function, i=0.1):
+        self.input = input_
+        self.name_of_function = function
+        self.temp_input = []
+        self.f = functions_[function]
+        
+    def __call__(self, x):
+        if not isinstance(x, np.ndarray):
+            x = np.array(x)
+            
+        self.temp_input = x
+        f = np.vectorize(self.f)
+        x = f(x)
+        
+        return x
