@@ -35,6 +35,7 @@ class Layer:
             x = np.array(x)
             
         self.temp_input = x
+        
         f = np.vectorize(self.f)
         x = f(x)
         x = np.dot(self.weights, x) + self.biases
