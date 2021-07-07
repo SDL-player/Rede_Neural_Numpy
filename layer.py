@@ -9,6 +9,7 @@ class Input:
         self.output = output
         self.weights = random.rand(output, input_) * i
         self.biases = random.rand(output) * i
+        self.temp_input = []
         
     def __call__(self, x):
         if not isinstance(x, np.ndarray):
