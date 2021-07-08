@@ -61,7 +61,7 @@ class Model:
                 
             self.layers[id_].biases -= gradient_b * alpha 
                 
-            return error
+        return error
                 
     
     def delta_mts(self, target, output):
