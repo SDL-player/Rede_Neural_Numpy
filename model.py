@@ -4,6 +4,7 @@ import numpy as np
 
 
 class Model:
+    
     def __init__(self):
         self.layers = []
         self.all_weights = []
