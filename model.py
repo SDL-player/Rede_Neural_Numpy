@@ -29,7 +29,12 @@ class Model:
         
         dEg, dEu = self.delta_mts(target, output)
         
-        for _id in range(size, 0, -1):
+        limit = size - 1
+        
+        if isinstance(self.layers[limit], layer.Output):
+            limit -= 1
+        
+        for _id in range(limit, -1, -1):
             id_ = _id - 1
             
             if _id == size:
