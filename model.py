@@ -16,7 +16,6 @@ class Model:
     def feedward(self, input_):
         x = input_
         for layer in self.layers:
-            self.all_weights.append(layer.weights)
             x = layer(x)
         
         return x
