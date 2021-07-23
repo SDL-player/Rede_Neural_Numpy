@@ -13,7 +13,7 @@ class Model:
     def add_layer(self, layer):
         self.layers.append(layer)
     
-    def feedward(self, input_):
+    def feedforward(self, input_):
         x = input_
         for layer in self.layers:
             x = layer(x)
