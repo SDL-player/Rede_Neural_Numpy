@@ -5,8 +5,8 @@ import numpy as np
 
 class Model:
     
-    def __init__(self):
-        self.layers = []
+    def __init__(self, layers=[]):
+        self.layers = layers
         self.all_weights = []
         self.outputs = []
     
